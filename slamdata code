@@ -1,0 +1,31 @@
+With Fomc:
+TotalWin:
+!``SELECT SUM(numOfWins) FROM `/Mickey/test/testing5` ORDER BY numOfWins ASC``
+TotalLoss:
+!``Select SUM(numOfLosses) FROM `/Mickey/test/testing5` ORDER BY numOfLosses ASC ``
+how many data:
+!``SELECT count(_id) FROM `/Mickey/test/testing5` ORDER BY _id ASC ``
+total win and loss:
+!``Select SUM(numOfLosses+numOfWins) FROM `/Mickey/test/testing5` ORDER BY numOfLosses ASC ``
+win ratio:
+!``Select SUM(numOfWins)/SUM((numOfLosses+numOfWins)) FROM `/Mickey/test/testing5` ORDER BY numOfLosses ASC ``
+///
+without fomc:
+TotalWin:
+!``SELECT SUM(numOfWins) FROM `/Mickey/test/testing6` ORDER BY numOfWins ASC``
+TotalLoss:
+!``Select SUM(numOfLosses) FROM `/Mickey/test/testing6` ORDER BY numOfLosses ASC ``
+total win and loss:
+!``Select SUM(numOfLosses+numOfWins) FROM `/Mickey/test/testing6` ORDER BY numOfLosses ASC ``
+win ratio:
+!``Select SUM(numOfWins)/SUM((numOfLosses+numOfWins)) FROM `/Mickey/test/testing6` ORDER BY numOfLosses ASC ``
+///
+without farm:
+TotalWin:
+!``SELECT SUM(numOfWins) FROM `/Mickey/test/testing7` ORDER BY numOfWins ASC``
+TotalLoss:
+!``Select SUM(numOfLosses) FROM `/Mickey/test/testing7` ORDER BY numOfLosses ASC ``
+total win and loss:
+!``Select SUM(numOfLosses+numOfWins) FROM `/Mickey/test/testing7` ORDER BY numOfLosses ASC ``
+win ratio:
+!``Select SUM(numOfWins)/SUM((numOfLosses+numOfWins)) FROM `/Mickey/test/testing7` ORDER BY numOfLosses ASC ``
