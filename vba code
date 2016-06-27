@@ -1,0 +1,37 @@
+Sub final()
+For i = 1 To 6000
+    For k = 3 To 166
+    If Worksheets("Result").Range("A" & i).Value = Worksheets("Calendar").Range("A" & k).Value Then
+    Worksheets("sheet3").Range("A" & i).Value = "n/a"
+    Exit For
+    Else: Worksheets("sheet3").Range("A" & i).Value = Worksheets("Result").Range("A" & i).Value
+    End If
+ Next k
+ Next i
+ 
+For j = 1 To 6000
+If Worksheets("Sheet3").Range("A" & j).Value = "n/a" Then
+Else
+Worksheets("sheet3").Range("B" & j).Value = Worksheets("Result").Range("B" & j).Value
+Worksheets("sheet3").Range("C" & j).Value = Worksheets("Result").Range("C" & j).Value
+Worksheets("sheet3").Range("D" & j).Value = Worksheets("Result").Range("D" & j).Value
+Worksheets("sheet3").Range("E" & j).Value = Worksheets("Result").Range("E" & j).Value
+Worksheets("sheet3").Range("F" & j).Value = Worksheets("Result").Range("F" & j).Value
+Worksheets("sheet3").Range("G" & j).Value = Worksheets("Result").Range("G" & j).Value
+Worksheets("sheet3").Range("H" & j).Value = Worksheets("Result").Range("H" & j).Value
+Worksheets("sheet3").Range("I" & j).Value = Worksheets("Result").Range("I" & j).Value
+Worksheets("sheet3").Range("J" & j).Value = Worksheets("Result").Range("J" & j).Value
+Worksheets("sheet3").Range("K" & j).Value = Worksheets("Result").Range("K" & j).Value
+Worksheets("sheet3").Range("L" & j).Value = Worksheets("Result").Range("L" & j).Value
+Worksheets("sheet3").Range("M" & j).Value = Worksheets("Result").Range("M" & j).Value
+Worksheets("sheet3").Range("N" & j).Value = Worksheets("Result").Range("N" & j).Value
+Worksheets("sheet3").Range("O" & j).Value = Worksheets("Result").Range("O" & j).Value
+Worksheets("sheet3").Range("P" & j).Value = Worksheets("Result").Range("P" & j).Value
+Worksheets("sheet3").Range("Q" & j).Value = Worksheets("Result").Range("Q" & j).Value
+Worksheets("sheet3").Range("R" & j).Value = Worksheets("Result").Range("R" & j).Value
+Worksheets("sheet3").Range("S" & j).Value = Worksheets("Result").Range("S" & j).Value
+Worksheets("sheet3").Range("T" & j).Value = Worksheets("Result").Range("T" & j).Value
+end if
+next j
+
+End Sub
