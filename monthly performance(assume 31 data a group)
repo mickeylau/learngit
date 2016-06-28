@@ -1,0 +1,73 @@
+package insertcsvtomongo;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.TimeZone;
+
+
+public class third {
+
+    public static void main(String[] args) throws IOException
+    {
+        FileReader fr = new FileReader("SampleData2.csv"); 
+        BufferedReader br = new BufferedReader(fr);
+        String line,tempstring;
+        String[] tempArray= new String[11];
+        ArrayList myList = new ArrayList();
+        int i=0;
+        while((line = br.readLine())!=null)
+        {
+           
+             tempstring = line; 
+             
+          tempArray = tempstring.split(",");
+             
+              for(i=0;i< tempArray.length;i++)
+              {          
+                  myList.add(tempArray[i]);
+              }
+        }
+       /****
+        String startDateString = tempArray[0];
+		TimeZone.setDefault(TimeZone.getTimeZone("GMT+8"));
+	    DateFormat df = new SimpleDateFormat("MM/dd/yyyy"); 
+	    java.util.Date startDate = null;
+	    try {
+	        startDate = df.parse(startDateString);
+	    } catch (ParseException e) {
+	        e.printStackTrace();
+	    }
+        ****/
+        int k = myList.size()/11;
+        int count=0;
+        double[][] trans_array = new double[k][11];
+        
+        for(int x=0;x<myList.size()/11;x++)
+        {
+            for(int y=0;y<11;y++)
+            {
+                trans_array[x][y]=Double.parseDouble((String) myList.get(count));
+                count++; 
+            }
+        }
+       double sum=0;
+       double perform=0;
+       double old=0;
+       for (int j=0;j<=184;j++){
+        for(int a=1+j*31;a<=(j+1)*31;a++){
+        sum=sum+trans_array[a][6];
+        }
+        for(int a=Math.max((1+j*31-31),0);a<=(j+1)*31-31;a++){
+            old=old+trans_array[a][6];}
+        perform=(sum-old)/125000;
+        System.out.println(perform);    
+       }
+    }
+       
+    }
