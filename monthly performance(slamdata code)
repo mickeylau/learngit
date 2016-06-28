@@ -1,0 +1,6 @@
+SELECT
+    DATE_PART("year",thedate) AS year,DATE_PART("month",thedate) AS month,
+    SUM(runningPnL)/125000 AS PnL
+FROM `/Mickey/testdb/sampledata3` AS c
+GROUP BY DATE_PART("year", thedate) ,DATE_PART("month", thedate)
+order by DATE_PART("year", thedate) ,DATE_PART("month", thedate) asc
