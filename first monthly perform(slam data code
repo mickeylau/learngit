@@ -1,0 +1,8 @@
+SELECT
+    DATE_PART("year",thedate) AS year,DATE_PART("month",thedate) AS month,
+    SUM(runningPnL) as PnL
+FROM `/Mickey/testdb/sampledata3` AS c
+where DATE_PART("year", thedate)<= DATE_PART("year",thedate)  and
+DATE_PART("month", thedate) <= DATE_PART("month",thedate)
+GROUP BY DATE_PART("year", thedate) ,DATE_PART("month", thedate) 
+order by DATE_PART("year", thedate) ,DATE_PART("month", thedate) asc 
