@@ -1,5 +1,5 @@
-SELECT a1.year, a1.month, a1.PnL, SUM(a2.PnL) as Running_Total 
+SELECT a1.year, a1.month, a1.PnL, a1.PnL/(SUM(a2.PnL)+125000) as Running_Total 
 FROM `/Mickey/testdb/sampledata6` as  a1, `/Mickey/testdb/sampledata6`as a2 
-WHERE (a1.month >= a2.month And a1.year=a2.year) OR (a1.PnL=a2.PnL AND a1.month = a2.month) or (a1.year>a2.year)
+WHERE (a1.month > a2.month And a1.year=a2.year) or (a1.year>a2.year)
 GROUP BY a1.year, a1.month,a1.PnL
 ORDER BY a1.year,a1.month ASC;
